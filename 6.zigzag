@@ -44,3 +44,31 @@ int main(){
     int line=4;
     cout<<convert(str,line);
 }
+/*
+Explanation
+
+paypalishiring into 4 lines
+
+[1]           [7]           [4]
+[2]      [6]  [8]      [3]  [5]
+[3]  [5]      [9]  [2]
+[4]           [1]
+
+in here, 1 to 7 distance is 6 by counting 1 to 7. So, distance for first line is 6.
+in second line, the distance is also 6 but need to put some case.
+    2 to 8 is also 6. But, between 2 and 8, there is a 6. So, We need to travel 6 first and then 8.
+    [2]<--4-->[6]<-2->[8]. As i had written, 2 to 6 is 4 and, 6 to 8 is 2.
+In third line, 3->5->9
+    [3]<-2->[5]<--4-->[9]
+
+So, We could make this equ. (row-1) * 2
+
+[2]<--a-->[6]<-b->[8]
+As we go down rows, a reduce, b added.
+
+
+
+
+
+    
+*/
