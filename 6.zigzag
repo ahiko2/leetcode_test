@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+string convert(string str,int row){
+    if(row == 1) 
+        return str;
+    int a=(row-1)*2;
+    int b=0;
+    string result="";
+    for(int i=0;i<row;i++){
+        int pos=i;
+
+        while(pos < str.length()){
+            //adding first letter
+            result+=str[pos];
+
+            if(a==0 or b==0){
+                pos+=a+b;
+                continue;
+                //complete first line here
+            }
+
+            pos+=a;
+            if(pos<str.length()){
+                //add A distance letter
+                result+=str[pos];
+            }
+            pos+=b;
+
+
+        }
+        a-=2;
+        b+=2;
+    }
+ 
+    return result;
+
+}
+int main(){
+    string str="paypalishiring";
+    int line=4;
+    cout<<convert(str,line);
+}
